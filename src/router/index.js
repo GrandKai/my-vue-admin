@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import bikes from '@/views/bikes'
 import data from '@/views/data'
 import home from '@/views/home'
-import rider from '@/views/rider'
 import status from '@/views/status'
 import users from '@/views/users'
+import rider from '@/views/rider'
+import bikes from '@/views/bikes'
 
 Vue.use(Router)
 
