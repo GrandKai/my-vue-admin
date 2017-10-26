@@ -7,11 +7,17 @@ import status from '@/views/status'
 import users from '@/views/users'
 import rider from '@/views/rider'
 import bikes from '@/views/bikes'
+import login from '@/views/login'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
     {
       path: '/',
       name: 'Hello',
