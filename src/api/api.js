@@ -24,3 +24,10 @@ axios.interceptors.response.use(function (response) {
   })
   return Promise.reject(error)
 })
+
+/**
+ * 用户登录
+ */
+export const loginUrl = params => {
+  return axios.post(`${baseUrl}/oauth/token`, params)
+}

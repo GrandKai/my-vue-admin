@@ -1,5 +1,6 @@
 <template>
   <div>
+    我是行程管理
   </div>
 </template>
 

@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import data from '@/views/data'
 import home from '@/views/home'
 import status from '@/views/status'
 import users from '@/views/users'
-import rider from '@/views/rider'
 import bikes from '@/views/bikes'
 import login from '@/views/login'
+import index from '@/views/index'
+import radar from '@/views/charts/radar'
 
 Vue.use(Router)
 
@@ -20,40 +20,43 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Hello',
-      component: HelloWorld
-    },
-    {
-      path: '/data',
-      name: 'data',
-      component: data,
+      name: 'index',
+      component: index,
       children: [
         {
-          path: '/users',
-          name: 'users',
-          component: users
+          path: '/data',
+          name: 'data',
+          component: data,
+          children: [
+            {
+              path: '/users',
+              name: 'users',
+              component: users
+            },
+            {
+              path: '/bikes',
+              name: 'bikes',
+              component: bikes
+            },
+            {
+              path: '/radar',
+              name: 'radar',
+              component: radar
+            }
+          ]
         },
         {
-          path: '/bikes',
-          name: 'bikes',
-          component: bikes
+          path: '/home',
+          name: 'home',
+          component: home
         },
         {
-          path: '/rider',
-          name: 'rider',
-          component: rider
+          path: '/status',
+          name: 'status',
+          component: status
         }
       ]
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: home
-    },
-    {
-      path: '/status',
-      name: 'status',
-      component: status
     }
+
   ]
 })
