@@ -32,17 +32,21 @@ export default new Router({
             {
               path: '/users',
               name: 'users',
-              component: users
-            },
-            {
-              path: '/bikes',
-              name: 'bikes',
-              component: bikes
-            },
-            {
-              path: '/radar',
-              name: 'radar',
-              component: radar
+              component: users,
+              children: [
+                {
+                  path: '/bikes',
+                  name: 'bikes',
+                  component: bikes,
+                  children: [
+                    {
+                      path: '/radar',
+                      name: 'radar',
+                      component: radar
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
