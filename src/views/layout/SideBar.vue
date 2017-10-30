@@ -1,15 +1,20 @@
 <template>
   <el-row class="tac">
     <el-col :span="12">
+
+      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+        <el-radio-button :label="false">展开</el-radio-button>
+        <el-radio-button :label="true">收起</el-radio-button>
+      </el-radio-group>
+
       <h5>自定义颜色</h5>
       <el-menu
         default-active="2"
-        class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
         background-color="#545c64"
         text-color="#fff"
-        active-text-color="#ffd04b">
+        active-text-color="#ffd04b"
+        class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-location"></i>
@@ -37,6 +42,25 @@
           <span slot="title">导航三</span>
         </el-menu-item>
       </el-menu>
+
+
+      <el-menu
+        :default-active="activeIndex2"
+        class="el-menu-demo"
+        mode="horizontal"
+        @select="handleSelect"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b">
+        <el-menu-item index="1">处理中心</el-menu-item>
+        <el-submenu index="2">
+          <template slot="title">我的工作台</template>
+          <el-menu-item index="2-1">选项1</el-menu-item>
+          <el-menu-item index="2-2">选项2</el-menu-item>
+          <el-menu-item index="2-3">选项3</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+      </el-menu>
     </el-col>
   </el-row>
 </template>
@@ -44,13 +68,20 @@
 <script type='es6'>
     export default {
         data() {
-            return {}
+            return {
+              isCollapse: true,
+              activeIndex: '1',
+              activeIndex2: '1'
+            }
         },
         method: {
           handleOpen(key, keyPath) {
-          console.log(key, keyPath);
+            console.log(key, keyPath);
           },
           handleClose(key, keyPath) {
+            console.log(key, keyPath);
+          },
+          handleSelect(key, keyPath) {
             console.log(key, keyPath);
           }
 

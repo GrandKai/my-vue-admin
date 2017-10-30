@@ -8,6 +8,7 @@ import bikes from '@/views/bikes'
 import login from '@/views/login'
 import index from '@/views/index'
 import radar from '@/views/charts/radar'
+// import SideBar from '@/views/layout/SideBar'
 
 Vue.use(Router)
 
