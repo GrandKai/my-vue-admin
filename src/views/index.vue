@@ -11,12 +11,13 @@
       active-text-color="#ffd04b" :router="true">
       <el-menu-item index="/data">处理中心</el-menu-item>
       <el-menu-item index="data">我的工作台</el-menu-item>
+
+      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+        <el-radio-button :label="false">展开</el-radio-button>
+        <el-radio-button :label="true">收起</el-radio-button>
+      </el-radio-group>
     </el-menu>
 
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-      <el-radio-button :label="false">展开</el-radio-button>
-      <el-radio-button :label="true">收起</el-radio-button>
-    </el-radio-group>
 
     <el-menu background-color="#545c64"
              text-color="#fff"
@@ -62,8 +63,7 @@
 
 <style>
   .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 50px;
-    /*width: 200px;*/
+    width: 200px;
     /*height: 80%;*/
     /*min-height: 400px;*/
   }
