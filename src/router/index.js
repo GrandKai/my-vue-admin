@@ -8,6 +8,7 @@ import bikes from '@/views/bikes'
 import login from '@/views/login'
 import index from '@/views/index'
 import radar from '@/views/charts/radar'
+import Layout from '@/views/layout/Layout'
 // import SideBar from '@/views/layout/SideBar'
 
 Vue.use(Router)
@@ -21,6 +22,11 @@ export default new Router({
     },
     {
       path: '/',
+      name: 'layout',
+      component: Layout
+    },
+    {
+      path: '/test',
       name: 'index',
       component: index,
       children: [

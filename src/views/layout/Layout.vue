@@ -12,11 +12,13 @@
 
 <script>
   import { NavBar, SideBar, AppMain } from '@/views/layout'
+
   export default {
     name: 'layout',
-    component: {
-      NavBar,
+    // 父子组件（涉及到数据传递）
+    components: {
       SideBar,
+      NavBar,
       AppMain
     },
     data () {
@@ -31,7 +33,7 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-  @import "@/styles/mixin.scss";
+  @import "../../styles/mixin.scss";
   .app-wrapper {
     @include clearfix;
     position: relative;
