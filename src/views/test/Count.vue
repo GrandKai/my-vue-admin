@@ -2,13 +2,17 @@
     <div>
       <p>get count from computed: {{countC}}</p>
       <p>get count from modules import getters: {{countG}}</p>
-      myFunction(22)
       <p>get count from modules import getters: {{myFunction(11)}}</p>
+      <button @click="add">add+1</button>
+      <button @click="increment">+1</button>
+      <button @click="incrementx(2)">+2</button>
+      <button @click="incrementAsync">异步</button>
+      <button @click="sub">sub</button>
     </div>
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
   import store from './store'
   export default {
     data () {
@@ -19,7 +23,12 @@
       ...mapGetters(['countG', 'myFunction']),
       countC: () => store.state.count
     },
-    methods: {},
+    methods: {
+      ...mapActions(['increment', 'incrementx', 'incrementAsync', 'add']),
+      sub: () => {
+        this.$store.dispatch('incrementx')
+      }
+    },
 
     /*
     * getters 中必须是一个个纯函数，调它被用的时候会传入一个 state 的引用
@@ -33,8 +42,6 @@
 //      console.log('1 直接导入 store 文件直接获取：get state direct from store:', store.state)
 //      console.log('3 实际工作中通过 getters 获取')
       console.log('2 通过在 main.js 中注册的全局store获取：get state from this.$store.state.CountStore', this.$store.state.CountStore.getters)
-
-      console.log(myFunction(11))
     }
   }
 </script>

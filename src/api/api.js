@@ -31,3 +31,9 @@ axios.interceptors.response.use(function (response) {
 export const loginUrl = params => {
   return axios.post(`${baseUrl}/oauth/token`, params)
 }
+
+export const getOnlineCount = (next) => {
+  setTimeout(() => {
+    return next({count: 1})
+  }, 500)
+}
