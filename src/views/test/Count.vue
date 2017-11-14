@@ -25,8 +25,8 @@
     },
     methods: {
       ...mapActions(['increment', 'incrementx', 'incrementAsync', 'add']),
-      sub: () => {
-        this.$store.dispatch('incrementx')
+      sub () {
+        this.$store.dispatch('incrementx', 3)
       }
     },
 

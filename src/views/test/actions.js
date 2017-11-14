@@ -17,6 +17,6 @@ export const incrementAsync = ({commit}) => {
 
 // 3. 带有参数例子
 export const incrementx = ({commit}, x) => {
-  console.log('执行 actions.js 文件中的 incrementx 方法', INCREMENTX)
+  console.log('执行 actions.js 文件中的 incrementx 方法', '入参x:' + x, INCREMENTX)
   commit(INCREMENTX, x)
 }
