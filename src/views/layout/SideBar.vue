@@ -34,12 +34,18 @@
 
   </div>
 </template>
-
+<style>
+  /*.el-menu-vertical-demo:not(.el-menu--collapse) {*/
+  .el-menu-vertical-demo {
+    /*width: 200px;*/
+    height: 100%;
+    /*min-height: 400px;*/
+  }
+</style>
 <script>
   import { mapGetters } from 'vuex'
   export default {
     data: () => ({
-      isCollapse: false,
       activeIndex: '1',
       activeIndex2: '1'
     }),

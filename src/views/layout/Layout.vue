@@ -57,17 +57,20 @@
       }
     }
     .sidebar-wrapper {
-      width: 10%;
+      width: 180px;
       position: fixed;
       top: 0;
       bottom: 0;
       left: 0;
       z-index: 1001;
       overflow: hidden;
-      transition: all .28s ease-out;
+      /*transition: all .28s ease-out;*/
+      /*transition: all 2s ease-out;*/
+      transition: all 2s ease-out;
     }
     .sidebar-container {
-      transition: all .28s ease-out;
+      /*transition: all .28s ease-out;*/
+      transition: all 2s ease-out;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -77,8 +80,9 @@
     }
     .main-container {
       min-height: 100%;
-      transition: all .28s ease-out;
-      margin-left: 10%;
+      /*transition: all .28s ease-out;*/
+      transition: all 2s ease-out;
+      margin-left: 180px;
     }
   }
 </style>
