@@ -38,7 +38,7 @@
   /*.el-menu-vertical-demo:not(.el-menu--collapse) {*/
   .el-menu-vertical-demo {
     /*width: 200px;*/
-    height: 100%;
+    height: 80%;
     /*min-height: 400px;*/
   }
 </style>

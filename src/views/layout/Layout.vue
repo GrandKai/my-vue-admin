@@ -1,11 +1,10 @@
 <template>
+    <!--<div class="app-wrapper" :class="{hideSidebar:opened}">-->
     <div class="app-wrapper" :class="{hideSidebar:opened}">
-      <div class="sidebar-wrapper">
+      <nav-bar></nav-bar>
+      <div>
         <side-bar class="sidebar-container"></side-bar>
-      </div>
-      <div class="main-container">
-        <nav-bar></nav-bar>
-        <app-main></app-main>
+        <app-main class="main-container"></app-main>
       </div>
     </div>
 </template>
@@ -39,7 +38,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    &.hideSidebar {
+    /*&.hideSidebar {
       .sidebar-wrapper {
         transform: translate(-140px, 0);
         .sidebar-container {
@@ -55,34 +54,30 @@
       .main-container {
         margin-left: 40px;
       }
-    }
-    .sidebar-wrapper {
-      width: 180px;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1001;
-      overflow: hidden;
-      /*transition: all .28s ease-out;*/
-      /*transition: all 2s ease-out;*/
-      transition: all 2s ease-out;
-    }
+    }*/
     .sidebar-container {
-      /*transition: all .28s ease-out;*/
-      transition: all 2s ease-out;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: -17px;
-      overflow-y: scroll;
+      float: left;
+      width: 10%;
+      margin-top: -1px;
+      /*width: 180px;*/
+      position: fixed;
+      /*top: 0;*/
+      /*bottom: 0;*/
+      /*left: 0;*/
+      /*z-index: 1001;*/
+      /*overflow: hidden;*/
+      /*!*transition: all .28s ease-out;*!*/
+      /*!*transition: all 2s ease-out;*!*/
+      /*transition: all 2s ease-out;*/
     }
     .main-container {
-      min-height: 100%;
-      /*transition: all .28s ease-out;*/
-      transition: all 2s ease-out;
-      margin-left: 180px;
+      float: left;
+      width: 90%;
+      /*height: 100%;*/
+      /*width: 100%;*/
+      /*transition: all .28s ease-out;
+      transition: all 2s ease-out;*/
+      margin-left: 10%;
     }
   }
 </style>
