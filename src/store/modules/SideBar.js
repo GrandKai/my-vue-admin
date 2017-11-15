@@ -3,18 +3,18 @@ const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 
 const SideBar = {
   state: {
-    sidebar: {
-      isCollapse: false
-    }
+    opened: false
   },
   mutations: {
     [TOGGLE_SIDEBAR]: (state) => {
-      return !state.isCollapse.isCollapse
+      console.log('执行 mutations 修改 sidebar 状态', !state.opened)
+      state.opened = !state.opened
     }
   },
   actions: {
-    toggleSideBar: ({dispatch}) => {
-      dispatch([TOGGLE_SIDEBAR])
+    toggleSideBar: ({commit}) => {
+      console.log('执行 actions toggleSideBar')
+      commit(TOGGLE_SIDEBAR)
     }
   }
 }

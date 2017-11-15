@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import SideBar from './modules/SideBar'
 import CountStore from '../views/test/store'
-// import getters from './getters'
+import getters from './getters'
 
 Vue.use(Vuex)
 const store = new Vuex.Store({
@@ -11,10 +11,10 @@ const store = new Vuex.Store({
   },
   // 子模块
   modules: {
-    SideBar,
-    CountStore
-  }
-  // getters
+    CountStore,
+    SideBar
+  },
+  getters
 })
 
 export default store

@@ -3,7 +3,7 @@
     <el-menu background-color="#545c64"
              text-color="#fff"
              active-text-color="#ffd04b"
-             class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+             class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="sidebar.opened">
 
       <el-submenu index="1">
         <template slot="title">
@@ -40,35 +40,31 @@
   </div>
 </template>
 
-<script type='es6'>
-    export default {
-//        data() {
-//            return {
-//              isCollapse: true,
-//              activeIndex: '1',
-//              activeIndex2: '1'
-//            }
-//        },
-        data: () => ({
-            isCollapse: true,
-            activeIndex: '1',
-            activeIndex2: '1'
-        }),
-        methods: {
-          handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-          },
-          handleClose(key, keyPath) {
-            console.log(key, keyPath);
-          },
-          handleSelect(key, keyPath) {
-            console.log(key, keyPath);
-          }
+<script>
+  import { mapGetters } from 'vuex'
+  export default {
+    data: () => ({
+      isCollapse: false,
+      activeIndex: '1',
+      activeIndex2: '1'
+    }),
+    computed: {
+      ...mapGetters(['sidebar'])
+    },
+    methods: {
+      handleOpen (key, keyPath) {
+        console.log(key, keyPath)
+      },
+      handleClose (key, keyPath) {
+        console.log(key, keyPath)
+      },
+      handleSelect (key, keyPath) {
+        console.log(key, keyPath)
+      }
 
-        },
-        mouted() {
-
-        }
+    },
+    mouted () {
 
     }
+  }
 </script>
