@@ -7,13 +7,7 @@
       <el-menu-item index="/data">处理中心</el-menu-item>
       <el-menu-item index="data">我的工作台</el-menu-item>
 
-      <button @click="toggleSideBar">展开</button>
-      <button @click="toggleSideBar">收起</button>
-      <!--<el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">-->
-      <el-radio-group  style="margin-bottom: 20px;">
-        <el-radio-button :label="false">展开</el-radio-button>
-        <el-radio-button :label="true">收起</el-radio-button>
-      </el-radio-group>
+      <button @click="toggleSideBar">折叠</button>
     </el-menu>
   </div>
 </template>

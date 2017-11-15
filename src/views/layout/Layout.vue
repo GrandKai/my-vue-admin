@@ -1,5 +1,5 @@
 <template>
-    <div class="app-wrapper">
+    <div class="app-wrapper" :class="{hideSidebar:opened}">
       <div class="sidebar-wrapper">
         <side-bar class="sidebar-container"></side-bar>
       </div>
@@ -24,10 +24,10 @@
     data () {
       return {}
     },
-
-    methods: {},
-    mounted () {
-
+    computed: {
+      opened () {
+        return this.$store.state.SideBar.opened
+      }
     }
   }
 </script>
@@ -57,7 +57,7 @@
       }
     }
     .sidebar-wrapper {
-      width: 180px;
+      width: 10%;
       position: fixed;
       top: 0;
       bottom: 0;
@@ -78,7 +78,7 @@
     .main-container {
       min-height: 100%;
       transition: all .28s ease-out;
-      margin-left: 180px;
+      margin-left: 10%;
     }
   }
 </style>

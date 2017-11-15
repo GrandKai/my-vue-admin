@@ -3,7 +3,7 @@ const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
 
 const SideBar = {
   state: {
-    opened: false
+    opened: true
   },
   mutations: {
     [TOGGLE_SIDEBAR]: (state) => {
